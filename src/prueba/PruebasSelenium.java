@@ -296,7 +296,7 @@ class PruebasSelenium {
         WebElement cpBox = driver1.findElement(By.id("cp"));
         
         direccionBox.sendKeys("C/Procurador, 21\\2-D. Sevilla");
-        cpBox.sendKeys("codigo");
+        cpBox.sendKeys("codig");
         
         
         WebElement submitButton = driver1.findElement(By.id("enviar"));
@@ -319,7 +319,7 @@ class PruebasSelenium {
         WebElement cpBox = driver1.findElement(By.id("cp"));
         
         direccionBox.sendKeys("C/Procurador, 21\\2-D. Sevilla");
-        cpBox.sendKeys("%-/");
+        cpBox.sendKeys("%-/#|");
         
         
         WebElement submitButton = driver1.findElement(By.id("enviar"));
