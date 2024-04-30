@@ -23,12 +23,12 @@ class PruebasSelenium {
 
 	@Test
 	void test01() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("123");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("123");
+		fechaBox.sendKeys("+");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
@@ -36,8 +36,8 @@ class PruebasSelenium {
 
 		// Es el elemento del h3
 		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
-		String textoDireccion = empleadoCorrecto.getText();
-		assertEquals("EMPLEADO AÑADIDO CORRECTAMENTE", textoDireccion);
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
 
 	}
 
