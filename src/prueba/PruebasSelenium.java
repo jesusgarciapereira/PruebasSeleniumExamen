@@ -27,8 +27,8 @@ class PruebasSelenium {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		nomApeBox.sendKeys("123");
-		fechaBox.sendKeys("+");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/07/1990");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
@@ -41,14 +41,38 @@ class PruebasSelenium {
 
 	}
 
+
 	@Test
 	void test02() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("123");
-		directivoBox.sendKeys("-");
+		nomApeBox.sendKeys("");
+		fechaBox.sendKeys("21/07/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertTrue(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertFalse(textoFecha);
+
+	}
+	
+	@Test
+	void test03() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("j");
+		fechaBox.sendKeys("21/07/1990");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
@@ -56,310 +80,527 @@ class PruebasSelenium {
 
 		// Es el elemento del h3
 		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
-		String textoDireccion = empleadoCorrecto.getText();
-		assertEquals("EMPLEADO AÑADIDO CORRECTAMENTE", textoDireccion);
-
-	}
-
-	@Test
-	void test03() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
-
-		numEmpleadoBox.sendKeys("");
-		directivoBox.sendKeys("+");
-
-		// Es el primer input con el value='Enviar'
-		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
-		submitButton.click();
-
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
-
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
 
 	}
 	
 	@Test
 	void test04() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("1");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("-Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/07/1990");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertTrue(textoNomApe);
 
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertFalse(textoFecha);
 
 	}
 	
 	@Test
 	void test05() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("123456");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira 2");
+		fechaBox.sendKeys("21/07/1990");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertTrue(textoNomApe);
 
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertFalse(textoFecha);
 
 	}
 	
 	@Test
 	void test06() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("000");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("Jesus & Garcia-Pereira");
+		fechaBox.sendKeys("21/07/1990");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertTrue(textoNomApe);
 
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertFalse(textoFecha);
 
 	}
-
+	
 	@Test
 	void test07() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("12");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
 
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
 	@Test
 	void test08() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("1234");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("2");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
 
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
 	@Test
 	void test09() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("ole");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/1990/07");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
 
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
 	@Test
 	void test10() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("&-%");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("07/21/1990");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
 
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
 	@Test
 	void test11() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("3.4");
-		directivoBox.sendKeys("+");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("07/1990/21");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertTrue(textoNumEmpleado);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
 
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertFalse(textoDirectivo);
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
 	@Test
 	void test12() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("123");
-		directivoBox.sendKeys("");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("1990/21/07");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertFalse(textoNumEmpleado);
-		
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertTrue(textoDirectivo);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
 	@Test
 	void test13() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("123");
-		directivoBox.sendKeys("*");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("1990/07/21");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertFalse(textoNumEmpleado);
-		
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertTrue(textoDirectivo);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
 	@Test
 	void test14() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("123");
-		directivoBox.sendKeys("+-%");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21 de julio del 90");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertFalse(textoNumEmpleado);
-		
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertTrue(textoDirectivo);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
 	@Test
 	void test15() {
-		driver1.get("https://elenarivero.github.io/Ejercicio2/index.html");
-		WebElement numEmpleadoBox = driver1.findElement(By.id("numero"));
-		WebElement directivoBox = driver1.findElement(By.id("directivo"));
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
-		numEmpleadoBox.sendKeys("123");
-		directivoBox.sendKeys("+-");
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("-2/07/1990");
 
 		// Es el primer input con el value='Enviar'
 		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
 		submitButton.click();
 
-		WebElement errorNumEmpleado = driver1.findElement(By.id("errorNumero"));
-		boolean textoNumEmpleado = errorNumEmpleado.isDisplayed();
-		assertFalse(textoNumEmpleado);
-		
-		WebElement errorDirectivo = driver1.findElement(By.id("errorDirectivo"));
-		boolean textoDirectivo = errorDirectivo.isDisplayed();
-		assertTrue(textoDirectivo);
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
 
 	}
 	
+	@Test
+	void test16() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("50/07/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
+
+	}
+	
+	@Test
+	void test17() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("00/07/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
+
+	}
+	
+	@Test
+	void test18() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("01/07/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		// Es el elemento del h3
+		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
+
+	}
+	
+	@Test
+	void test19() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("31/07/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		// Es el elemento del h3
+		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
+
+	}
+	
+	@Test
+	void test20() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("32/07/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
+
+	}
+	
+	@Test
+	void test21() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/-5/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
+
+	}
+	
+	@Test
+	void test22() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/20/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
+
+	}
+	
+	@Test
+	void test23() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/00/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
+
+	}
+	
+	@Test
+	void test24() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/01/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		// Es el elemento del h3
+		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
+
+	}
+	
+	@Test
+	void test25() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/12/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		// Es el elemento del h3
+		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
+
+	}
+	
+	@Test
+	void test26() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/13/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
+		boolean textoNomApe = errorNomApe.isDisplayed();
+		assertFalse(textoNomApe);
+
+		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
+		boolean textoFecha = errorFecha.isDisplayed();
+		assertTrue(textoFecha);
+
+	}
 	/*
 	 * @AfterAll static void exitDriver() { driver1.quit(); }
 	 */
