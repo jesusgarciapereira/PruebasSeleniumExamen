@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,10 +21,14 @@ class PruebasSelenium {
 		driver1 = new FirefoxDriver();
 
 	}
+	
+	@BeforeEach
+	void getURL() {
+		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+	}
 
 	@Test
 	void test01() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -44,7 +49,6 @@ class PruebasSelenium {
 
 	@Test
 	void test02() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -67,7 +71,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test03() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -87,7 +90,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test04() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -110,7 +112,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test05() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -133,7 +134,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test06() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -156,7 +156,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test07() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -179,7 +178,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test08() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -202,7 +200,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test09() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -225,7 +222,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test10() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -248,7 +244,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test11() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -271,7 +266,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test12() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -294,7 +288,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test13() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -317,7 +310,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test14() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -340,7 +332,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test15() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -363,7 +354,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test16() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -386,7 +376,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test17() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -409,7 +398,6 @@ class PruebasSelenium {
 	
 	@Test
 	void test18() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -429,7 +417,44 @@ class PruebasSelenium {
 	
 	@Test
 	void test19() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("02/07/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		// Es el elemento del h3
+		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
+
+	}
+	
+	@Test
+	void test20() {
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("30/07/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		// Es el elemento del h3
+		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
+
+	}
+	
+	@Test
+	void test21() {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -448,8 +473,7 @@ class PruebasSelenium {
 	}
 	
 	@Test
-	void test20() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+	void test22() {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -471,8 +495,7 @@ class PruebasSelenium {
 	}
 	
 	@Test
-	void test21() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+	void test23() {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -494,8 +517,7 @@ class PruebasSelenium {
 	}
 	
 	@Test
-	void test22() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+	void test24() {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -517,8 +539,7 @@ class PruebasSelenium {
 	}
 	
 	@Test
-	void test23() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+	void test25() {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -540,8 +561,7 @@ class PruebasSelenium {
 	}
 	
 	@Test
-	void test24() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+	void test26() {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -560,8 +580,45 @@ class PruebasSelenium {
 	}
 	
 	@Test
-	void test25() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+	void test27() {
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/02/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		// Es el elemento del h3
+		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
+
+	}
+	
+	@Test
+	void test28() {
+		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
+		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+
+		nomApeBox.sendKeys("Jesus Garcia-Pereira");
+		fechaBox.sendKeys("21/11/1990");
+
+		// Es el primer input con el value='Enviar'
+		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		submitButton.click();
+
+		// Es el elemento del h3
+		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
+		String textoDatos = empleadoCorrecto.getText();
+		assertEquals("Datos correctos", textoDatos);
+
+	}
+	
+	@Test
+	void test29() {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
@@ -580,8 +637,7 @@ class PruebasSelenium {
 	}
 	
 	@Test
-	void test26() {
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+	void test30() {
 		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
 		WebElement fechaBox = driver1.findElement(By.id("fecha"));
 
