@@ -10,8 +10,7 @@ public class Prueba {
 	public static void main(String[] args) {
 		
 		WebDriver driver1 = new FirefoxDriver();
-		
-		
+				
         driver1.get("https://www.selenium.dev/selenium/web/web-form.html");        
         
 
