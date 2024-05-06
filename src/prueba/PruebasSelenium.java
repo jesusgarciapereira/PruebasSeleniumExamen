@@ -24,54 +24,293 @@ class PruebasSelenium {
 	
 	@BeforeEach
 	void getURL() {
-		// Aquí debes poner la pág web que hay que probar
-		driver1.get("https://elenarivero.github.io/ejercicio3/index.html");
+		driver1.get("https://elenarivero.github.io/examen/index.html");
 	}
 
-	// Caso con todo correcto
 	@Test
 	void test01() {
-		// Si va por id, es así
-		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
-		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
 
-		nomApeBox.sendKeys("Jesus Garcia-Pereira");
-		fechaBox.sendKeys("21/07/1990");
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("Clave.inventada3");
 
-		// Es el primer input con el value='Enviar'
-		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
 		submitButton.click();
 
-		// Es el elemento del h3
-		WebElement empleadoCorrecto = driver1.findElement(By.tagName("h3"));
-		String textoDatos = empleadoCorrecto.getText();
-		assertEquals("Datos correctos", textoDatos);
+		WebElement loginCorrecto = driver1.findElement(By.id("login"));
+		String textoDatos = loginCorrecto.getText();
+		assertEquals("LOGIN CORRECTO", textoDatos);
 
 	}
 
-	// Caso con un error
 	@Test
 	void test02() {
 		
-		WebElement nomApeBox = driver1.findElement(By.id("nomap"));
-		WebElement fechaBox = driver1.findElement(By.id("fecha"));
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
 
-		nomApeBox.sendKeys("");
-		fechaBox.sendKeys("21/07/1990");
+		usuarioBox.sendKeys("j2");
+		contrasenniaBox.sendKeys("Clave.inventada3");
 
-		// Es el primer input con el value='Enviar'
-		WebElement submitButton = driver1.findElement(By.xpath("//input[@value='Enviar']"));
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
 		submitButton.click();
 
-		WebElement errorNomApe = driver1.findElement(By.id("errorNomap"));
-		boolean textoNomApe = errorNomApe.isDisplayed();
-		assertTrue(textoNomApe);
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertTrue(textoUsuario);
 
-		WebElement errorFecha = driver1.findElement(By.id("errorFecha"));
-		boolean textoFecha = errorFecha.isDisplayed();
-		assertFalse(textoFecha);
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertFalse(textoContrasennia);
 
 	}
+	
+	@Test
+	void test03() {
+		
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jg3");
+		contrasenniaBox.sendKeys("Clave.inventada3");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertTrue(textoUsuario);
+
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertFalse(textoContrasennia);
+
+	}
+	
+	@Test
+	void test04() {
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jes4");
+		contrasenniaBox.sendKeys("Clave.inventada3");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement loginCorrecto = driver1.findElement(By.id("login"));
+		String textoDatos = loginCorrecto.getText();
+		assertEquals("LOGIN CORRECTO", textoDatos);
+
+	}
+	
+	@Test
+	void test05() {
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesg5");
+		contrasenniaBox.sendKeys("Clave.inventada3");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement loginCorrecto = driver1.findElement(By.id("login"));
+		String textoDatos = loginCorrecto.getText();
+		assertEquals("LOGIN CORRECTO", textoDatos);
+
+	}
+	
+	@Test
+	void test06() {
+		
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("Jesgar-per3");
+		contrasenniaBox.sendKeys("Clave.inventada3");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertTrue(textoUsuario);
+
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertFalse(textoContrasennia);
+
+	}
+	
+	@Test
+	void test07() {
+		
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("C-5");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertFalse(textoUsuario);	
+
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertTrue(textoContrasennia);
+
+	}
+	
+	@Test
+	void test08() {
+		
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("Clave/4");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertFalse(textoUsuario);	
+
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertTrue(textoContrasennia);
+
+	}
+	
+	@Test
+	void test09() {
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("Clave/44");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement loginCorrecto = driver1.findElement(By.id("login"));
+		String textoDatos = loginCorrecto.getText();
+		assertEquals("LOGIN CORRECTO", textoDatos);
+
+	}
+	
+	@Test
+	void test10() {
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("Clave/123");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement loginCorrecto = driver1.findElement(By.id("login"));
+		String textoDatos = loginCorrecto.getText();
+		assertEquals("LOGIN CORRECTO", textoDatos);
+
+	}
+	
+	@Test
+	void test11() {
+		
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("clave.inventada3");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertFalse(textoUsuario);	
+
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertTrue(textoContrasennia);
+
+	}
+	
+	@Test
+	void test12() {
+		
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("CLAVE.INVENTADA3");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertFalse(textoUsuario);	
+
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertTrue(textoContrasennia);
+
+	}
+	
+	@Test
+	void test13() {
+		
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("Clave.inventada");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertFalse(textoUsuario);	
+
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertTrue(textoContrasennia);
+
+	}
+	
+	@Test
+	void test14() {
+		
+		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
+		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
+
+		usuarioBox.sendKeys("jesgarper3");
+		contrasenniaBox.sendKeys("claveInventada3");
+
+		WebElement submitButton = driver1.findElement(By.id("enviar"));
+		submitButton.click();
+
+		WebElement errorUsuario = driver1.findElement(By.id("errorUsuario"));
+		boolean textoUsuario = errorUsuario.isDisplayed();
+		assertFalse(textoUsuario);	
+
+		WebElement errorContrasennia = driver1.findElement(By.id("errorPassword"));
+		boolean textoContrasennia = errorContrasennia.isDisplayed();
+		assertTrue(textoContrasennia);
+
+	}
+	
+	
 	
 	/*
 	 * @AfterAll static void exitDriver() { driver1.quit(); }
