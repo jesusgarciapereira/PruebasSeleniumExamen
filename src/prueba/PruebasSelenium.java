@@ -128,7 +128,7 @@ class PruebasSelenium {
 		WebElement usuarioBox = driver1.findElement(By.id("usuario"));
 		WebElement contrasenniaBox = driver1.findElement(By.id("password"));
 
-		usuarioBox.sendKeys("Jesgar-per3");
+		usuarioBox.sendKeys("jesgar-per3");
 		contrasenniaBox.sendKeys("Clave.inventada3");
 
 		WebElement submitButton = driver1.findElement(By.id("enviar"));
